@@ -1,7 +1,7 @@
 # encoding: UTF-8
 require "mongo_mapper"
 
-class Product 
+class Product
   include MongoMapper::Document
 
   key :productNummber,  String, :require => true
@@ -9,6 +9,8 @@ class Product
   key :imgurl,          String, :require => true
 
   many :nutritions
+
+  timestamps!
 end
 
 class Nutrition
