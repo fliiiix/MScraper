@@ -13,6 +13,8 @@ This was build as a part for our [project](https://github.com/optikfluffel/what-
 7. Profit!!
 
 Only scraper_take2.rb is full functional!
+
+
 Copyright (c) <201>, <Fliiiiix>
 All rights reserved.
 
