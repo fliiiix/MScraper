@@ -7,7 +7,7 @@ This was build as a part for our [project](https://github.com/optikfluffel/what-
 1. Create a apikey.rb file
 2. add your api key in there like this `API_KEY = "XXXXXXXXXXXX"`
 3. You can do this with echo 'API_KEY = "XXXXXXXXXXXX"' > apikey.rb
-4. run bundle install 
+4. run bundle install
 5. check that a mongoDB is running
 6. ????
 7. Profit!!

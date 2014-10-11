@@ -7,18 +7,18 @@ class Migros
 
   base_uri "http://api.autoidlabs.ch"
 
-  def categories id 
+  def categories id
     respons = self.class.get("/categories/#{id}")
-    JSON.parse respons.body if respons.code == 200 
+    JSON.parse respons.body if respons.code == 200
   end
 
   def product ean
     respons = self.class.get("/products/#{ean}")
-    JSON.parse respons.body if respons.code == 200 
+    JSON.parse respons.body if respons.code == 200
   end
 end
 
-SCRAPER = Migros.new 
+SCRAPER = Migros.new
 
 def loadProduct ean
   prod = SCRAPER.product ean
@@ -39,7 +39,7 @@ def loadCategories id
       ean = product["ean"]
 
 =begin
-      unless ean.nil? 
+      unless ean.nil?
         if ean.to_s.length != 0
           loadProduct ean
         end
@@ -51,7 +51,7 @@ def loadCategories id
   #loop over each categorie
   puts "...----......"
   puts cat["catMbrs"]
-  if cat["catMbrs"].length != 0 
+  if cat["catMbrs"].length != 0
     for catmbrs in cat["catMbrs"] do
       loadCategories catmbrs["id"]
     end
