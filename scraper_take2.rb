@@ -4,7 +4,7 @@ require "json"
 require "httparty"
 
 
-MongoMapper.database = "test2"
+MongoMapper.database = "food"
 require_relative "model.rb"
 require_relative "apikey.rb"
 
@@ -40,7 +40,8 @@ element_counter = 0
           url = "http://#{product[1]["image"]["large"]}".split(".jpg")[0]
           db_product = Product.new(:productNummber => product[0], 
                                    :name => product[1]["name"], 
-                                   :imgurl =>  "#{url}.jpg")
+                                   :imgurl =>  "#{url}.jpg",
+                                   :rnd => rand())
 
           for nut in product[1]["nutrition_facts"]["standard"]["nutrients"]
             db_product.nutritions.build(:name => nut["name"], :unit => nut["quantity_unit"], :quantity => nut["quantity"])

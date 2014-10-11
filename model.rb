@@ -19,4 +19,5 @@ class Nutrition
   key :name,      String, :require => true
   key :unit,      String, :require => true
   key :quantity,  Integer, :require => true
+  key :rnd,       Float, :require => true
 end
