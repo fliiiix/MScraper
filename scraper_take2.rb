@@ -37,11 +37,16 @@ element_counter = 0
 
         facts = product[1]["nutrition_facts"]
         unless facts.nil? || facts["standard"].nil? || facts["standard"]["nutrients"].nil?
+          
           url = "http://#{product[1]["image"]["large"]}".split(".jpg")[0]
+
+          leshop_url = product[1]["links"]["leshop"]["url"] unless product[1]["links"].nil? || product[1]["links"]["leshop"].nil? || product[1]["links"]["leshop"]["url"].nil?
+
           db_product = Product.new(:productNummber => product[0],
                                    :name => product[1]["name"],
                                    :imgurl =>  "#{url}.jpg",
-                                   :rnd => rand())
+                                   :rnd => rand(),
+                                   :leshopurl => leshop_url)
 
           for nut in product[1]["nutrition_facts"]["standard"]["nutrients"]
             db_product.nutritions.build(:name => nut["name"], :unit => nut["quantity_unit"], :quantity => nut["quantity"])

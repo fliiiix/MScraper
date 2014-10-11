@@ -7,6 +7,8 @@ class Product
   key :productNummber,  String, :require => true
   key :name,            String, :require => true
   key :imgurl,          String, :require => true
+  key :rnd,             Float, :require => true
+  key :leshopurl,       String, :require => true
 
   many :nutritions
 
@@ -19,5 +21,4 @@ class Nutrition
   key :name,      String, :require => true
   key :unit,      String, :require => true
   key :quantity,  Integer, :require => true
-  key :rnd,       Float, :require => true
 end
