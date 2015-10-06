@@ -15,7 +15,7 @@ This was build as a part for our [project](https://github.com/optikfluffel/what-
 Only scraper_take2.rb is full functional!
 
 
-Copyright (c) <201>, <Fliiiiix>
+Copyright (c) <2014>, <Fliiiiix>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
